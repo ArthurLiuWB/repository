@@ -18,3 +18,17 @@ git reflog 查看命令历史，可以回到未来的哪个版本
 # 6. 工作区文件回滚到分支版本或者暂存区版本
 git checkout -- <file>
 git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令，我们在后面的分支管理中会再次遇到git checkout命令。
+# 7. 远程仓库
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+# 8. 克隆仓库
+要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。
+Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
+# 9. 分支
+git checkout -b dev
+git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+git branch dev
+git checkout dev
+git branch  git branch命令会列出所有分支，当前分支前面会标一个*号。
+git merge dev git merge命令用于合并指定分支到当前分支。注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。
