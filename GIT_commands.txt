@@ -1,0 +1,17 @@
+# git 命令
+# 1. git仓库初始化，新建一个目录，然后使用git init命令
+git init
+# 2. 添加文件到仓库，两步
+git add <file>
+git commit -m <message>
+# 3. 掌握工作区状态
+git status
+git diff <file>
+# 4. 版本回退，HEAD是当前的版本
+git reset --hard <commit_id>
+git log 查看提交历史，确定回退的版本
+git reflog 查看命令历史，可以回到未来的哪个版本
+# 5. 工作区、版本库.git；版本库里存放了暂存区stage，为我们自动创建的一个分支master，以及指向master的一个指针叫HEAD
+第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；
+第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。
+需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。
